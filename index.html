@@ -14,12 +14,19 @@
     button:hover { background-color: #21867a; }
   </style>
   <script>
-    function showMap(id) {
+  function toggleMap(id) {
+    const map = document.getElementById(id);
+    if (map.classList.contains('active')) {
+      map.classList.remove('active');
+    } else {
+      // Hide all maps
       const maps = document.querySelectorAll('.map');
-      maps.forEach(map => map.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+      maps.forEach(m => m.classList.remove('active'));
+      // Show the selected map
+      map.classList.add('active');
     }
-  </script>
+  }
+</script>
 </head>
 <body>
   <h1>🍋 Ro's Lemonade</h1>
